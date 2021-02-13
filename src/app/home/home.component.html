@@ -1,0 +1,22 @@
+<h1>Bienvenidos a la pagina de prueba!</h1>
+
+<div class="play-container">
+    <h2>Contador de clicks</h2>
+    <p>Has dado click <button (click)='countClick()'>aquí </button> {{clickCounter}} veces.</p>
+</div>
+
+<div class="play-container">
+    <h2>Introducción de datos</h2>
+    <input type="text" [(ngModel)]='name'>
+    <br>
+    <p><strong>Dijiste: </strong>{{name}}</p>
+</div>
+
+<div class="play-container">
+    <ng-template class=truth-statement [ngIf]="clickCounter > 7" [ngIfElse]="none">
+        <p>Hay más de 7 clicks</p>
+    </ng-template>
+    <ng-template #none>
+        <p>Hay menos de 7 clicks</p>
+    </ng-template>
+</div>
